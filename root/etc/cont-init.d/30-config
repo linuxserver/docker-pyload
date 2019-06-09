@@ -1,0 +1,37 @@
+#!/usr/bin/with-contenv bash
+
+# default config file
+[[ ! -f "/config/pyload.conf" ]] && \
+  cp \
+  /defaults/pyload.conf \
+  /config/pyload.conf
+
+# setup users in sqlite if not present
+if [ ! -f "/config/files.db" ]; then
+  echo "[cont-init.d] Inital DB setup this may take some time"
+  (/app/pyload/pyLoadCore.py > /dev/null 2>&1) & PID=$!
+  sleep 10
+  while kill -0 $PID; do
+    sleep 1
+    kill $PID
+  done
+  if [ -f "/config/files.db" ]; then
+    /usr/bin/sqlite3 /config/files.db "\
+      INSERT INTO \
+        users(\
+          'name',
+          'password') \
+        VALUES(\
+          'admin',\
+          '89716b990572490870a394ad82a13a4733ec0fcdf89db');"
+  else
+    echo "[cont-init.d] Something went wrong with DB setup you will not be able to login"
+  fi
+fi
+
+# permissions
+echo "[cont-init.d] Setting permissions this may take some time"
+chown -R abc:abc \
+  /config
+chown abc:abc \
+ /downloads
