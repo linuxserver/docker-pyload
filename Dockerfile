@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.9
+FROM lsiobase/alpine:3.10
 
 RUN \
  echo "**** install packages ****" && \
