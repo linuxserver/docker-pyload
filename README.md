@@ -189,5 +189,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **18.07.19:** - Add ffmpeg for plugins the do video processing.
 * **28.06.19:** - Rebasing to alpine 3.10.
 * **08.06.19:** - Initial release.
