@@ -4,6 +4,7 @@ RUN \
  echo "**** install packages ****" && \
  apk add --no-cache \
 	curl \
+	ffmpeg \
 	jq \
 	nodejs \
 	py-curl \
