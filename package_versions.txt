@@ -106,7 +106,7 @@ sqlite-libs-3.28.0-r1
 ssl_client-1.30.1-r2
 tesseract-ocr-4.0.0-r2
 tiff-4.0.10-r1
-tzdata-2019b-r0
+tzdata-2019c-r0
 unrar-5.7.5-r0
 unzip-6.0-r4
 v4l-utils-libs-1.16.6-r0
