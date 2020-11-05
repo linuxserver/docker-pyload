@@ -43,6 +43,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "04.11.20:", desc: "Rebase to alpine 3.11." }
   - { date: "18.10.20:", desc: "Chown app folder to fix plugin updater." }
   - { date: "18.07.19:", desc: "Add ffmpeg for plugins the do video processing." }
   - { date: "28.06.19:", desc: "Rebasing to alpine 3.10." }
