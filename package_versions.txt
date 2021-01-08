@@ -54,7 +54,6 @@ libtheora-1.1.1-r14
 libtls-standalone-2.9.1-r0
 libunistring-0.9.10-r0
 libuuid-2.34-r1
-libuv-1.34.0-r0
 libva-2.6.0-r0
 libvdpau-1.3-r0
 libvorbis-1.3.6-r2
@@ -75,7 +74,7 @@ ncurses-libs-6.1_p20200118-r4
 ncurses-terminfo-base-6.1_p20200118-r4
 nettle-3.5.1-r0
 nghttp2-libs-1.40.0-r1
-nodejs-12.15.0-r1
+nodejs-12.20.1-r0
 oniguruma-6.9.4-r1
 opus-1.3.1-r0
 p11-kit-0.23.18.1-r1
