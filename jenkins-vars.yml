@@ -2,14 +2,12 @@
 
 # jenkins variables
 project_name: docker-pyload
-external_type: github_commit
-release_type: stable
-release_tag: latest
-ls_branch: master
+external_type: pip_version
+release_type: prerelease
+release_tag: ng
+ls_branch: ng
 repo_vars:
-  - EXT_GIT_BRANCH = 'stable'
-  - EXT_USER = 'pyload'
-  - EXT_REPO = 'pyload'
+  - EXT_PIP = 'pyload-ng'
   - BUILD_VERSION_ARG = 'PYLOAD_VERSION'
   - LS_USER = 'linuxserver'
   - LS_REPO = 'docker-pyload'

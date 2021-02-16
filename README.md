@@ -35,7 +35,7 @@ Find us at:
 [![MicroBadger Layers](https://img.shields.io/microbadger/layers/linuxserver/pyload.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge)](https://microbadger.com/images/linuxserver/pyload "Get your own version badge on microbadger.com")
 [![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/pyload.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=pulls&logo=docker)](https://hub.docker.com/r/linuxserver/pyload)
 [![Docker Stars](https://img.shields.io/docker/stars/linuxserver/pyload.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=stars&logo=docker)](https://hub.docker.com/r/linuxserver/pyload)
-[![Jenkins Build](https://img.shields.io/jenkins/build?labelColor=555555&logoColor=ffffff&style=for-the-badge&jobUrl=https%3A%2F%2Fci.linuxserver.io%2Fjob%2FDocker-Pipeline-Builders%2Fjob%2Fdocker-pyload%2Fjob%2Fmaster%2F&logo=jenkins)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-pyload/job/master/)
+[![Jenkins Build](https://img.shields.io/jenkins/build?labelColor=555555&logoColor=ffffff&style=for-the-badge&jobUrl=https%3A%2F%2Fci.linuxserver.io%2Fjob%2FDocker-Pipeline-Builders%2Fjob%2Fdocker-pyload%2Fjob%2Fng%2F&logo=jenkins)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-pyload/job/ng/)
 [![LSIO CI](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=CI&query=CI&url=https%3A%2F%2Fci-tests.linuxserver.io%2Flinuxserver%2Fpyload%2Flatest%2Fci-status.yml)](https://ci-tests.linuxserver.io/linuxserver/pyload/latest/index.html)
 
 [Pyload](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
@@ -56,6 +56,14 @@ The architectures supported by this image are:
 | arm64 | arm64v8-latest |
 | armhf | arm32v7-latest |
 
+## Version Tags
+
+This image provides various versions that are available via tags. `latest` tag usually provides the latest stable version. Others are considered under development and caution must be exercised when using them.
+
+| Tag | Description |
+| :----: | --- |
+| latest | Stable releases from Pyload |
+| ng | Development releases from Pyload-ng (currently alpha) |
 
 ## Usage
 
@@ -81,7 +89,6 @@ services:
       - /path/to/downloads:/downloads
     ports:
       - 8000:8000
-      - 7227:7227 #optional
     restart: unless-stopped
 ```
 
@@ -94,7 +101,6 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=Europe/London \
   -p 8000:8000 \
-  -p 7227:7227 `#optional` \
   -v /path/to/pyload/config:/config \
   -v /path/to/downloads:/downloads \
   --restart unless-stopped \
@@ -109,7 +115,6 @@ Container images are configured using parameters passed at runtime (such as thos
 | Parameter | Function |
 | :----: | --- |
 | `-p 8000` | Allows HTTP access to the application |
-| `-p 7227` | pyLoad control port |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London |
@@ -151,8 +156,8 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
 ## Application Setup
 
 Access the web interface at `http://your-ip:8000` the default login is: 
-username - **admin**
-password - **password**
+username - **pyload**
+password - **pyload**
 
 For general usage please see the pyLoad wiki [here](https://github.com/pyload/pyload/wiki) .
 
@@ -228,6 +233,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **16.02.21:** - Rebase to alpine 3.13. Push pyload-ng to tag `ng`.
 * **04.11.20:** - Rebase to alpine 3.11.
 * **18.10.20:** - Chown app folder to fix plugin updater.
 * **18.07.19:** - Add ffmpeg for plugins the do video processing.

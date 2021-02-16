@@ -13,6 +13,13 @@ available_architectures:
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
   - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
 
+# development version
+development_versions: true
+development_versions_items:
+  - { tag: "latest", desc: "Stable releases from Pyload" }
+  - { tag: "ng", desc: "Development releases from Pyload-ng (currently alpha)" }
+
+
 # container parameters
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
@@ -27,7 +34,7 @@ param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London"}
 
 # optional params
-opt_param_usage_include_ports: true
+opt_param_usage_include_ports: false
 opt_param_ports:
   - { external_port: "7227", internal_port: "7227", port_desc: "pyLoad control port" }
 
@@ -36,13 +43,14 @@ opt_param_ports:
 app_setup_block_enabled: true
 app_setup_block: |
   Access the web interface at `http://your-ip:8000` the default login is: 
-  username - **admin**
-  password - **password**
+  username - **pyload**
+  password - **pyload**
 
   For general usage please see the pyLoad wiki [here](https://github.com/pyload/pyload/wiki) .
 
 # changelog
 changelogs:
+  - { date: "16.02.21:", desc: "Rebase to alpine 3.13. Push pyload-ng to tag `ng`." }
   - { date: "04.11.20:", desc: "Rebase to alpine 3.11." }
   - { date: "18.10.20:", desc: "Chown app folder to fix plugin updater." }
   - { date: "18.07.19:", desc: "Add ffmpeg for plugins the do video processing." }
