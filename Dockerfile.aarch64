@@ -32,6 +32,7 @@ RUN \
 	unzip \
 	zlib && \
  pip install \
+	passlib \
 	pillow \
 	pycrypto \
 	pycurl \
