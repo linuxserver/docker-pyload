@@ -238,6 +238,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **23.02.21:** - Add Python plugin `passlib`.
 * **16.02.21:** - Publish `ng` tag for pyload-ng (currently alpha).
 * **04.11.20:** - Rebase to alpine 3.11.
 * **18.10.20:** - Chown app folder to fix plugin updater.
