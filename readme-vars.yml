@@ -51,6 +51,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "23.02.21:", desc: "Add Python plugin `passlib`." }
   - { date: "16.02.21:", desc: "Publish `ng` tag for pyload-ng (currently alpha)." }
   - { date: "04.11.20:", desc: "Rebase to alpine 3.11." }
   - { date: "18.10.20:", desc: "Chown app folder to fix plugin updater." }
