@@ -124,7 +124,7 @@ sqlite-3.34.1-r0
 sqlite-libs-3.34.1-r0
 ssl_client-1.32.1-r3
 tesseract-ocr-4.1.1-r5
-tiff-4.1.0-r2
+tiff-4.2.0-r0
 tzdata-2021a-r0
 unrar-6.0.3-r0
 unzip-6.0-r8
