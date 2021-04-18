@@ -40,6 +40,7 @@ Find us at:
 [![LSIO CI](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=CI&query=CI&url=https%3A%2F%2Fci-tests.linuxserver.io%2Flinuxserver%2Fpyload%2Flatest%2Fci-status.yml)](https://ci-tests.linuxserver.io/linuxserver/pyload/latest/index.html)
 
 [Pyload](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
+
 [![pyload](https://pyload.net/img/banner.png)](https://pyload.net/)
 
 ## Supported Architectures
