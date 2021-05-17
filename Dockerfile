@@ -10,46 +10,46 @@ LABEL maintainer="aptalca"
 ENV HOME="/config"
 
 RUN \
- echo "**** install build packages ****" && \
- apk add --no-cache --virtual=build-dependencies \
-	build-base \
-	cargo \
-	curl-dev \
-	libffi-dev \
-	libjpeg-turbo-dev \
-	openssl-dev \
-	python3-dev \
-	zlib-dev && \
- echo "**** install packages ****" && \
- apk add --no-cache \
-	curl \
-	ffmpeg \
-	jq \
-	libjpeg-turbo \
-	nodejs \
-	py3-pip \
-	python3 \
-	sqlite \
-	tesseract-ocr \
-	unrar \
-	unzip \
-	zlib && \
- echo "**** install pyload ****" && \
- if [ -z ${PYLOAD_VERSION+x} ]; then \
-	PYLOAD="pyload-ng[all]"; \
- else \
-	PYLOAD="pyload-ng[all]==${PYLOAD_VERSION}"; \
- fi && \
- pip3 install -U pip && \
- pip install -U \
-	"${PYLOAD}" && \
- echo "**** cleanup ****" && \
- apk del --purge \
-	build-dependencies && \
- rm -rf \
-	/tmp/* \
-	${HOME}/.cache \
-	${HOME}/.cargo
+  echo "**** install build packages ****" && \
+  apk add --no-cache --virtual=build-dependencies \
+    build-base \
+    cargo \
+    curl-dev \
+    libffi-dev \
+    libjpeg-turbo-dev \
+    openssl-dev \
+    python3-dev \
+    zlib-dev && \
+  echo "**** install packages ****" && \
+  apk add --no-cache \
+    curl \
+    ffmpeg \
+    jq \
+    libjpeg-turbo \
+    nodejs \
+    py3-pip \
+    python3 \
+    sqlite \
+    tesseract-ocr \
+    unrar \
+    unzip \
+    zlib && \
+  echo "**** install pyload ****" && \
+  if [ -z ${PYLOAD_VERSION+x} ]; then \
+    PYLOAD="pyload-ng[all]"; \
+  else \
+    PYLOAD="pyload-ng[all]==${PYLOAD_VERSION}"; \
+  fi && \
+  pip3 install -U pip && \
+  pip install -U --find-links https://wheel-index.linuxserver.io/alpine/ \
+    "${PYLOAD}" && \
+  echo "**** cleanup ****" && \
+  apk del --purge \
+    build-dependencies && \
+  rm -rf \
+    /tmp/* \
+    ${HOME}/.cache \
+    ${HOME}/.cargo
 
 # add local files
 COPY root/ /
