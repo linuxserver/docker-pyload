@@ -3,7 +3,7 @@
 # project information
 project_name: pyload
 project_url: "https://pyload.net/"
-project_logo: "https://pyload.net/img/banner.png"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/pyload-icon.png"
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 
