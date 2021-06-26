@@ -41,7 +41,7 @@ Find us at:
 
 [Pyload](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
 
-[![pyload](https://pyload.net/img/banner.png)](https://pyload.net/)
+[![pyload](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/pyload-icon.png)](https://pyload.net/)
 
 ## Supported Architectures
 
