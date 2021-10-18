@@ -36,6 +36,7 @@ RUN \
 	pillow \
 	pycrypto \
 	pycurl \
+  send2trash \
 	pyopenssl && \
  echo "**** install pyload ****" && \
  mkdir -p \
