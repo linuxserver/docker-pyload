@@ -12,7 +12,7 @@ ca-certificates-bundle-20191127-r5
 cairo-1.16.0-r2
 coreutils-8.32-r2
 curl-7.79.1-r0
-expat-2.2.10-r1
+expat-2.2.10-r2
 ffmpeg-4.3.3-r0
 ffmpeg-libs-4.3.3-r0
 fontconfig-2.13.1-r3
